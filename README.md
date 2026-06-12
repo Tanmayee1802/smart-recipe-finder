@@ -8,7 +8,6 @@ A full-stack MERN web application for discovering, creating, and managing recipe
 
 **Team:** Tanmayee · Renu Sri · Karthik  
 **Stack:** MongoDB · Express · React · Node.js  
-**Design Inspired By:** Casa Cook (casacook.com) — luxury, editorial aesthetic
 
 ---
 
