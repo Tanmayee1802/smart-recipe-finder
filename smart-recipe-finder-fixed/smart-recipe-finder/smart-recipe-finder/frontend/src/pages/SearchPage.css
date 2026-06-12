@@ -1,0 +1,203 @@
+.search-page__hero {
+  background: var(--charcoal);
+  padding: 8rem 0 3rem;
+}
+
+.search-page__title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.search-page__title em { font-style: italic; color: var(--terracotta-light); }
+
+.search-page__form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 800px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.search-page__input-wrap {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(245,240,232,0.2);
+  padding: 0 1rem;
+  transition: border-color 0.2s;
+}
+
+.search-page__input-wrap:focus-within {
+  border-color: rgba(245,240,232,0.5);
+}
+
+.search-page__input-wrap svg { color: rgba(245,240,232,0.5); flex-shrink: 0; }
+
+.search-page__input-wrap input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0.875rem 0;
+  font-size: 0.95rem;
+  color: var(--white);
+  font-family: var(--sans);
+}
+
+.search-page__input-wrap input::placeholder { color: rgba(245,240,232,0.4); }
+
+.search-page__input-wrap button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(245,240,232,0.5);
+  display: flex;
+}
+
+.filters-toggle.has-filters {
+  border-color: var(--terracotta-light);
+  color: var(--terracotta-light);
+}
+
+.search-page__filters {
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(245,240,232,0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  animation: slideDown 0.3s ease;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.6);
+  margin-bottom: 0.6rem;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-chip {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(245,240,232,0.2);
+  background: none;
+  color: rgba(245,240,232,0.65);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-chip:hover {
+  border-color: rgba(245,240,232,0.5);
+  color: var(--white);
+}
+
+.filter-chip.active {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--white);
+}
+
+.clear-btn {
+  align-self: flex-start;
+  color: rgba(245,240,232,0.6) !important;
+  border-color: rgba(245,240,232,0.2) !important;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+}
+
+.search-page__results {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.search-page__results-header {
+  margin-bottom: 2rem;
+}
+
+.search-page__count {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+}
+
+.search-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.search-page__loading,
+.search-page__empty,
+.search-page__error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 5rem 1rem;
+  text-align: center;
+  color: var(--warm-gray);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.pagination__btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--sand-dark);
+  background: none;
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination__btn:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta);
+}
+
+.pagination__btn.active {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .search-page__grid { grid-template-columns: 1fr; }
+  .search-page__form { flex-direction: column; }
+  .search-page__input-wrap { min-width: 100%; }
+}
+
+.card-animate {
+  animation: cardFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cardFadeUp {
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
